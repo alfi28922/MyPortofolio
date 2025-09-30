@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Portofolio</title>
+    <link rel="stylesheet" href="myporto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <title>Portofolio</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span> My Portofolio </span>
+            </div>
+            <div class="links">
+                <div class="link"><a href="">Home</a></div>
+                <div class="link"><a href="about.html">About</a></div>
+                <div class="link"><a href="myproject.html">MyProject</a></div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <a href="">Home</a>
+            <a href="about.html">About</a>
+            <a href="myproject.html">My Project</a>
+            <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="image">
+                <img src="WhatsApp Image 2025-08-29 at 01.17.05_ea7c79bf.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <h1>Halo I'm <span>Alfi</span></h1>
+                <h2 class="typing-text">I'm a <span></span></h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammadalfi299/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="myproject.html"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://instagram.com/mhmmdalfi7" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:malfi4299@gmail.com"target="_blank"><i class="fa fa-envelope"></i></a>
+                </div>
+                <div class="btn">
+                    <a href="https://drive.google.com/uc?export=download&id=1pC3veSAeszbcwb2TkojxemyZFl7raqFb" class="download-btn">
+                    <button>Download CV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+    offset: 0
+});
+
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-400px)"
+        }
+    </script>
+
+        <!-- Tambahkan Footer -->
+    <footer>
+        <p>&copy; 2025 Muhammad Alfi. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-400px)";
+        }
+    </script>
+</body>
+</html>

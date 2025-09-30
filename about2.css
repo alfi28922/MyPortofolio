@@ -1,0 +1,280 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animasi fade-in semua konten */
+.container, header, .about, .skills, footer {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+header { animation-delay: 0.2s; }
+.about { animation-delay: 0.4s; }
+.skills { animation-delay: 0.6s; }
+footer { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Container */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 30px;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #e0e0e0;
+  position: relative;
+}
+header h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #2980b9, #6dd5ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(41,128,185,0.5); }
+  to   { text-shadow: 0 0 25px rgba(109,213,237,0.8); }
+}
+header p {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Navbar pojok kanan */
+nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #f0f8ff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background: linear-gradient(90deg, #2980b9, #6dd5ed);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Section umum */
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bullet default untuk semua section (kecuali Skills) */
+section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-family: Arial, sans-serif; /* fallback font biar bullet nggak kotak */
+}
+
+.skills ul {
+  list-style: none; /* Skills tetap tanpa bullet */
+  padding-left: 0;
+}
+
+/* Section Titles */
+.about h2, .skills h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+.about h2::after, .skills h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #2980b9, #6dd5ed);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* About */
+.about p {
+  font-size: 1.15rem;
+  color: #34495e;
+  line-height: 1.9;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+.about p:hover {
+  transform: translateX(5px);
+}
+
+/* Skills */
+.skills ul li {
+  font-size: 1.1rem;
+  background: #f0f8ff;
+  color: #2c3e50;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.skills ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(41,128,185,0.2);
+  transition: left 0.4s ease;
+}
+.skills ul li:hover::before {
+  left: 0;
+}
+.skills ul li:hover {
+  background: linear-gradient(90deg, #6dd5ed, #2980b9);
+  color: #fff;
+  transform: translateX(10px) scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  padding: 15px;
+}
+footer a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #6dd5ed;
+  text-decoration: underline;
+}
+
+/* Responsive untuk tablet & mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  header {
+    padding: 40px 15px 20px;
+  }
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  header p {
+    font-size: 1rem;
+  }
+
+  nav {
+    top: 10px;
+    right: 15px;
+    gap: 10px;
+  }
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  section {
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  .about h2, .skills h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .skills ul li {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* Ukuran sangat kecil (HP di bawah 440px) */
+@media (max-width: 440px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .about p, .skills ul li {
+    font-size: 0.95rem;
+  }
+}
